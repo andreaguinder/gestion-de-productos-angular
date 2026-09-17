@@ -1,0 +1,12 @@
+<h1>{{titulo}}</h1>
+<h2>{{subtitulo}}</h2>
+
+<section>
+  <app-product-form (productCreated)="addProduct($event)" />
+</section>
+
+<section class="product-list">
+  @for (product of products; track product.id) {
+  <app-product-cart [product]="product" />
+  }
+</section>

@@ -1,0 +1,43 @@
+<form [formGroup]="formulario" (submit)="guardarProducto()">
+
+    <div class="container-up"> 
+  <div class="form-group">
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" formControlName="nombre">
+    </div>
+
+    <div>
+      <label for="precio">Precio:</label>
+      <input type="number" id="precio" name="precio" formControlName="precio">
+    </div>
+
+    <div>
+      <label for="descripcion">Descripción:</label>
+      <textarea id="descripcion" name="descripcion" formControlName="descripcion"></textarea>
+    </div>
+    </div>
+
+    <div class="form-group">
+    <div>
+      <label for="categoria">Categoría:</label>
+      <input type="text" id="categoria" name="categoria" formControlName="categoria">
+    </div>
+
+
+    <div>
+      <label for="imagen">Imagen:</label>
+      <input type="text" id="imagen" name="imagen" formControlName="imagen">
+    </div>
+
+    <div class="checkbox-group">
+      <label for="disponible">Disponible:</label>
+      <input type="checkbox" id="disponible" name="disponible" formControlName="disponible">
+    </div>
+  </div>
+  </div>
+  <div class="container-down">
+  <button type="submit">Guardar</button>
+</div>
+
+</form>

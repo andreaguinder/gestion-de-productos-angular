@@ -1,0 +1,119 @@
+form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 350px;
+    gap: 16px;
+    padding: 16px;
+    background-color: #083164;
+    color: #FFFFFF;
+    border-radius: 16px;
+    margin: 30px auto 50px;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+.container-up {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+}
+
+form input {
+    height: 32px;
+    border-radius: 4px;
+    padding: 4px 12px;
+    min-width: 220px;
+
+}
+
+label {
+    min-width: 100px;
+}
+
+
+
+div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.container-down {
+    width: 100%;
+}
+button {
+    background-color: #FFFFFF;
+    color: #083164;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    width: 100%;
+    font-size: 18px;
+}
+
+textarea {
+    min-height: 64px;
+    min-width: 220px;
+
+}
+
+.checkbox-group {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #0284c7;
+  border-radius: 32px;
+  min-width: 20px !important;
+  max-width: 20px;
+}
+
+@media screen and (min-width: 768px) {
+
+form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 700px;
+    gap: 16px;
+    padding: 16px;
+    background-color: #083164;
+    color: #FFFFFF;
+    border-radius: 16px;
+    margin: 30px auto 50px;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    flex-direction: row;
+}
+}

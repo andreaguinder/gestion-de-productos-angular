@@ -1,0 +1,14 @@
+<div class="product-card">
+  <div class="product-images">
+    <img [src]="product.imagen" [alt]="'Imagen de ' + product.nombre">
+  </div>
+  <div class="product-info">
+    <small>ID: {{ product.id }}</small>
+    <h2>{{ product.nombre }}</h2>
+    <span><span class="categoria">Categoría: </span>{{ product.categoria }}</span>
+    <p>{{ product.descripcion }}</p>
+    <span class="precio">${{ product.precio }}</span>
+    <p>{{ product.disponible ? "Disponible" : "No disponible" }}</p>
+    <button>Comprar</button>
+  </div>
+</div>
