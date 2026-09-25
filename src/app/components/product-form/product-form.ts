@@ -1,5 +1,5 @@
 import { Component, output } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Product } from '../../interfaces/IProduct';
 
 const { required, minLength, min } = Validators;
@@ -12,38 +12,48 @@ const { required, minLength, min } = Validators;
 })
 export class ProductForm {
 
-  formulario
-
+  formulario: FormGroup;
   productCreated = output<Product>();
 
   constructor(private formbuilder: FormBuilder) {
     this.formulario = this.formbuilder.group({
-      nombre: ['', [required, minLength(3)]],
-      precio: [0, [required, min(0)]],
-      categoria: ['', required],
-      descripcion: ['', required],
-      imagen: ['', required],
-      disponible: [true, required]
+      title: ['', [required, minLength(3)]],
+      price: [0, [required, min(0)]],
+      description: ['', [required]],
+      category: ['', [required]],
+      image: ['']
     });
   }
 
-  guardarProducto() {
-    
+  saveProduct(): void {
+    if (this.formulario.invalid) {
+      this.formulario.markAllAsTouched();
+      return;
+    }
+
     const data = this.formulario.getRawValue();
-    const { nombre, precio, categoria, descripcion, imagen, disponible } = data;
 
     const newProduct: Product = {
-      id: crypto.randomUUID(),
-      nombre: nombre || "producto sin nombre",
-      precio: precio || 0,
-      categoria: categoria || "sin categoría",
-      descripcion: descripcion || "sin descripción",
-      imagen: imagen || "/assets/images/placeholder-img.png",
-      disponible: disponible  || true
+      id: Date.now(), 
+      title: data.title,
+      price: data.price,
+      category: data.category,
+      description: data.description,
+      image: data.image || '/assets/images/placeholder-img.png',
+      rating: {
+        rate: 0,
+        count: 0
+      }
     };
 
     this.productCreated.emit(newProduct);
-    this.formulario.reset();
+
+    this.formulario.reset({
+      title: '',
+      price: 0,
+      description: '',
+      category: '',
+      image: ''
+    });
   }
 }
-

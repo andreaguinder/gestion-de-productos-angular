@@ -1,14 +1,27 @@
 <div class="product-card">
   <div class="product-images">
-    <img [src]="product.imagen" [alt]="'Imagen de ' + product.nombre">
+    <img [src]="product.image" [alt]="'Imagen de ' + product.title">
   </div>
   <div class="product-info">
-    <small>ID: {{ product.id }}</small>
-    <h2>{{ product.nombre }}</h2>
-    <span><span class="categoria">Categoría: </span>{{ product.categoria }}</span>
-    <p>{{ product.descripcion }}</p>
-    <span class="precio">${{ product.precio }}</span>
-    <p>{{ product.disponible ? "Disponible" : "No disponible" }}</p>
-    <button>Comprar</button>
+    <small>ID: {{ product.id }} | Creado: {{ createdAt | date:'dd/MM/yyyy' }}</small>
+    <h2>{{ product.title }}</h2>
+    <span><span class="categoria">Categoría: </span>{{ product.category }}</span>
+    <p>{{ product.description }}</p>
+
+
+    <div class="precio-container">
+      <span class="precio-original">Precio: {{ product.price | currency:'USD' }}</span>
+      <span class="precio-descuento">Con 15% OFF: {{ product.price | descuento:15 | currency:'USD' }}</span>
+    </div>
+
+    @if (product.rating) {
+      <div class="product-rating">
+        <span class="rating-rate">⭐ {{ product.rating.rate }}</span>
+        <span class="rating-count">({{ product.rating.count }} opiniones)</span>
+      </div>
+    }
+
+    <button class="btn-buy">Comprar</button>
+    <button class="btn-delete" (click)="deleteProduct()">Eliminar</button>
   </div>
 </div>
