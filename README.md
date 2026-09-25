@@ -1,59 +1,42 @@
-# GestionDeProductos
+# Gestión de Productos - Angular App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.7.
+Aplicación web desarrollada en Angular para la gestión dinámica de un catálogo de productos. Permite visualizar, buscar, filtrar por categorías, agregar nuevos ítems mediante un formulario reactivo y eliminar productos, interactuando con un servicio asincrónico y consumiendo una API pública.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Características y Consigna
 
+- **Servicio Angular (`ProductService`):** Manejo centralizado del estado de los productos mediante RxJS (`BehaviorSubject` y `Observables`) y solicitudes HTTP (`HttpClient`) a la FakeStore API.
+- **Filtrado por Categorías:** Carga inicial filtrada para obtener únicamente productos de *men's clothing* y *women's clothing*.
+- **Formulario Reactivo (`ReactiveFormsModule`):** Alta de productos con validaciones en tiempo real para nombre, precio, categoría y descripción.
+- **Buscador en Tiempo Real:** Filtrado reactivo por título o categoría desde el cliente.
+- **Pipes Estándar:** Uso de `currency` para formatear precios en moneda y `date` para fechas de alta.
+- **Pipe Personalizado (`DiscountPipe`):** Transformación visual de precios aplicando porcentajes de descuento.
+- **Control Flow Moderno:** Implementación de `@for`, `@if` y `@empty` propios de las versiones recientes de Angular.
+
+---
+
+## 🛠️ Instalación y Ejecución
+
+Sigue estos pasos para clonar el repositorio e iniciar la aplicación localmente:
+
+### 1. Clonar el repositorio
 ```bash
-ng serve
+git clone [https://github.com/andreaguinder/gestion-de-productos-angular.git](https://github.com/andreaguinder/gestion-de-productos-angular.git)
+
+    npm install
+    
+    ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Una vez que el servidor esté en marcha, abrí tu navegador e ingresá a:
 
-## Code scaffolding
+http://localhost:4200/ (o el que te indique la consola si lo tenés ocupado)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-```bash
-ng generate component component-name
-```
+## 👤 Créditos y Datos de la Entrega
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Estudiante: Andrea Guinder
+Curso: 181802
+Módulo / Unidad: Módulo 1 - Unidad 3
+Entrega: Tarea N° 3
