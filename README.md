@@ -23,9 +23,13 @@ Sigue estos pasos para clonar el repositorio e iniciar la aplicación localmente
 ### 1. Clonar el repositorio
 ```bash
 git clone [https://github.com/andreaguinder/gestion-de-productos-angular.git](https://github.com/andreaguinder/gestion-de-productos-angular.git)
+```
 
+```bash
     npm install
-    
+```
+
+```bash
     ng serve
 ```
 
@@ -37,6 +41,9 @@ http://localhost:4200/ (o el que te indique la consola si lo tenés ocupado)
 ## 👤 Créditos y Datos de la Entrega
 
 Estudiante: Andrea Guinder
+
 Curso: 181802
+
 Módulo / Unidad: Módulo 1 - Unidad 3
+
 Entrega: Tarea N° 3
