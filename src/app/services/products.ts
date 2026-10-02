@@ -31,10 +31,20 @@ export class ProductService {
     });
   }
 
-  getProducts(): Observable<Product[]> {
-    return this.products$;
-  }
+getProducts(): Observable<Product[]> {
+  this.http.get<Product[]>(this.apiUrl).pipe(
+    map(products => products.filter(p => 
+      p.category === "men's clothing" || p.category === "women's clothing"
+    ))
+  ).subscribe(filtered => this.productsSubject.next(filtered));
 
+  return this.products$;
+}
+
+  getProductById(id: string){
+    return this.http.get<Product>(`${this.apiUrl}/${id}`
+    );
+  }
 
   addProduct(product: Product): Observable<Product> {
     const currentProducts = this.productsSubject.getValue();

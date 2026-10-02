@@ -1,1 +1,19 @@
-<app-home></app-home>
+<div class="layout-container">
+  <header>
+      <nav>
+          <ul>
+              <li><a routerLink="/">Inicio</a></li>
+              <li><a routerLink="/productos">Nuestros Productos</a></li>
+              <li><a routerLink="/productos/nuevo">Agregar Producto</a></li>
+          </ul>
+      </nav>
+  </header>
+
+  <main class="content">
+      <router-outlet></router-outlet>
+  </main>
+
+  <footer>
+      <p>© 2024 Andrea Guinder. Todos los derechos reservados.</p>
+  </footer>
+</div>

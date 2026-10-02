@@ -1,0 +1,20 @@
+<section class="search-container">
+  <input 
+    type="text" 
+    placeholder="Buscar por título o categoría..." 
+    [value]="searchTerm"
+    (input)="searchTerm = $any($event.target).value; onSearchInput($event)"
+    class="search-input"
+  />
+</section>
+
+<section class="product-list">
+  @for (product of products; track product.id) {
+    <app-product-cart 
+      [product]="product" 
+      (productDeleted)="deleteProduct($event)" 
+    />
+  } @empty {
+    <p class="no-results">Cargando o no hay productos registrados...</p>
+  }
+</section>

@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'descuento'
+  name: 'descuento',
+  standalone: true
 })
 export class DiscountPipe implements PipeTransform {
   transform(price: number, percentage: number = 10): number {
