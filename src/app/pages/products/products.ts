@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { ProductService } from '../../services/products';
 import { Product } from '../../interfaces/IProduct';
 import { ProductCart } from '../../components/product-cart/product-cart';
@@ -15,10 +15,14 @@ export class Products {
   products: Product[] = [];
   searchTerm: string = '';
 
-  constructor(private productService: ProductService) {
+  constructor(
+    private productService: ProductService,
+    private cdr: ChangeDetectorRef 
+  ) {
     this.productService.getProducts().subscribe((data) => {
       this.allProducts = data;
       this.products = data;
+      this.cdr.detectChanges(); 
     });
   }
 
