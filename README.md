@@ -41,7 +41,11 @@ http://localhost:4200/ (o el que te indique la consola si lo tenés ocupado)
 
 Plataforma elegida: Vercel
 
-Enlace a la aplicación: [Insertar enlace de Vercel acá]
+Enlace a la aplicación: [[Proyecto en Vercel](https://gestion-de-productos-angular.vercel.app/)]
+
+## Capturas de pantalla
+
+En public/assets/proyecto
 
 ## 👤 Créditos y Datos de la Entrega
 
